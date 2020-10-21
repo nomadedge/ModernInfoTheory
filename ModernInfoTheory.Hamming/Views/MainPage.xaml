@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="ModernInfoTheory.Hamming.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModernInfoTheory.Hamming.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="n (длина кодового слова)"/>
+
+                <TextBox Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Center"
+                         PlaceholderText="Введите n"
+                         Text="{x:Bind WordLength, Mode=TwoWay}"/>
+            </Grid>
+
+            <TextBox Grid.Row="1"
+                     PlaceholderText="Введите последовательность битов"
+                     TextWrapping="Wrap"
+                     Text="{x:Bind ViewModel.Message, Mode=TwoWay}"/>
+
+            <Button Grid.Row="2"
+                    Content="Построить матрицы"
+                    HorizontalAlignment="Left"
+                    Click="{x:Bind ViewModel.CreateMatrices}"/>
+
+            <Button Grid.Row="2"
+                    Content="Проверить корректность"
+                    HorizontalAlignment="Center"
+                    Click="{x:Bind CheckIfCorrect}"/>
+
+            <Button Grid.Row="2"
+                    Content="Закодировать сообщение"
+                    HorizontalAlignment="Right"
+                    Click="{x:Bind ViewModel.EncodeMessage}"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="H (проверочная матрица)"/>
+
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Text="{x:Bind ViewModel.CheckMatrix, Mode=OneWay}"/>
+
+            <TextBlock Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="G (порождающая матрица)"/>
+
+            <TextBlock Grid.Row="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Text="{x:Bind ViewModel.GenerateMatrix, Mode=OneWay}"/>
+
+            <TextBlock Grid.Row="4"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="Закодированное сообщение"/>
+
+            <TextBlock Grid.Row="5"
+                       IsTextSelectionEnabled="True"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Text="{x:Bind ViewModel.EncodedMessage, Mode=OneWay}"/>
+        </Grid>
+
+    </Grid>
+</Page>
