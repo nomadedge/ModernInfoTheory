@@ -8,7 +8,91 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="n (длина кодового слова)"/>
+
+                <TextBox Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Center"
+                         PlaceholderText="Введите n"
+                         Text="{x:Bind WordLength, Mode=TwoWay}"/>
+            </Grid>
+
+            <TextBox Grid.Row="1"
+                     PlaceholderText="Введите кодовые слова"
+                     TextWrapping="Wrap"
+                     Text="{x:Bind ViewModel.Message, Mode=TwoWay}"/>
+
+            <Button Grid.Row="2"
+                    Content="Сгенерировать сообщение"
+                    HorizontalAlignment="Left"
+                    Click="{x:Bind ViewModel.GenerateMessage}"/>
+
+            <Button Grid.Row="2"
+                    Content="Показать допустимые слова"
+                    HorizontalAlignment="Center"
+                    Click="{x:Bind ViewModel.GeneratePossibleWords}"/>
+
+            <Button Grid.Row="2"
+                    Content="Исправить ошибки"
+                    HorizontalAlignment="Right"
+                    Click="{x:Bind FixErrors}"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="Слова с исправленными ошибками"/>
+
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       Text="{x:Bind ViewModel.FixedMessage, Mode=OneWay}"/>
+
+            <TextBlock Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="Все возможные кодовые слова"/>
+
+            <TextBlock Grid.Row="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       IsTextSelectionEnabled="True"
+                       Text="{x:Bind ViewModel.PossibleWords, Mode=OneWay}"/>
+        </Grid>
 
     </Grid>
 </Page>

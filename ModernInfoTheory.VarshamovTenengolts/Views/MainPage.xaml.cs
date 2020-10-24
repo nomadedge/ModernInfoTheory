@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ModernInfoTheory.VarshamovTenengolts.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +24,32 @@ namespace ModernInfoTheory.VarshamovTenengolts.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public MainViewModel ViewModel
+        {
+            get { return DataContext as MainViewModel; }
+            set { DataContext = value; }
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
+            ViewModel = new MainViewModel();
+        }
+
+        public string WordLength { get => ViewModel.WordLength.ToString(); set => ViewModel.WordLength = Convert.ToInt32(value); }
+
+        public void FixErrors()
+        {
+            var wrongWords = ViewModel.FixErrors();
+            if (wrongWords.Any())
+            {
+                var content = "Список некорректных слов:";
+                foreach (var word in wrongWords)
+                {
+                    content += $" {word}";
+                }
+                new MessageDialog(content, "Обнаружены некорректные слова").ShowAsync();
+            }
         }
     }
 }
