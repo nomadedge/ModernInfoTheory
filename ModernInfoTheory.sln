@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30608.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernInfoTheory.Hamming", "ModernInfoTheory.Hamming\ModernInfoTheory.Hamming.csproj", "{578FA5F6-F03D-48A3-B1E0-16370B073A31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernInfoTheory.Common", "ModernInfoTheory.Common\ModernInfoTheory.Common.csproj", "{2255D255-762F-4F8B-B6F7-EDE498F2BBFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernInfoTheory.Common", "ModernInfoTheory.Common\ModernInfoTheory.Common.csproj", "{2255D255-762F-4F8B-B6F7-EDE498F2BBFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernInfoTheory.VarshamovTenengolts", "ModernInfoTheory.VarshamovTenengolts\ModernInfoTheory.VarshamovTenengolts.csproj", "{C434D12A-597D-4A2A-955E-50C0EEACE426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernInfoTheory.ReedSolomon", "ModernInfoTheory.ReedSolomon\ModernInfoTheory.ReedSolomon.csproj", "{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,32 @@ Global
 		{C434D12A-597D-4A2A-955E-50C0EEACE426}.Release|x86.ActiveCfg = Release|x86
 		{C434D12A-597D-4A2A-955E-50C0EEACE426}.Release|x86.Build.0 = Release|x86
 		{C434D12A-597D-4A2A-955E-50C0EEACE426}.Release|x86.Deploy.0 = Release|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM.Build.0 = Debug|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM.Deploy.0 = Debug|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM64.Build.0 = Debug|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x64.ActiveCfg = Debug|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x64.Build.0 = Debug|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x64.Deploy.0 = Debug|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x86.ActiveCfg = Debug|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x86.Build.0 = Debug|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Debug|x86.Deploy.0 = Debug|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|Any CPU.ActiveCfg = Release|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM.ActiveCfg = Release|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM.Build.0 = Release|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM.Deploy.0 = Release|ARM
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM64.ActiveCfg = Release|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM64.Build.0 = Release|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|ARM64.Deploy.0 = Release|ARM64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x64.ActiveCfg = Release|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x64.Build.0 = Release|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x64.Deploy.0 = Release|x64
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x86.ActiveCfg = Release|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x86.Build.0 = Release|x86
+		{ECD69BC0-1E92-42BF-B039-BCD05D58AB60}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

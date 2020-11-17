@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ModernInfoTheory.Hamming.Base
+namespace ModernInfoTheory.Hamming.Common
 {
     public class Observable : INotifyPropertyChanged
     {

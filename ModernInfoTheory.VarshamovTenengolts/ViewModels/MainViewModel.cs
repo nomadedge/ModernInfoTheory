@@ -1,9 +1,7 @@
-﻿using ModernInfoTheory.Hamming.Base;
+﻿using ModernInfoTheory.Hamming.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernInfoTheory.VarshamovTenengolts.ViewModels
 {
@@ -142,6 +140,12 @@ namespace ModernInfoTheory.VarshamovTenengolts.ViewModels
 
             foreach (var word in words)
             {
+                if (word.Count() == WordLength)
+                {
+                    fixedMessage += $"{word} ";
+                    continue;
+                }
+
                 var bits = new List<int>();
                 foreach (var letter in word)
                 {

@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="ModernInfoTheory.ReedSolomon.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModernInfoTheory.ReedSolomon.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="t (максимальное кол-во ошибок)"/>
+
+                <TextBox Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Center"
+                         PlaceholderText="Введите t"
+                         Text="{x:Bind MaxErrorsCount, Mode=TwoWay}"/>
+            </Grid>
+
+            <TextBox Grid.Row="1"
+                     PlaceholderText="Введите слова"
+                     TextWrapping="Wrap"
+                     Text="{x:Bind ViewModel.Message, Mode=TwoWay}"/>
+
+            <Button Grid.Row="2"
+                    Content="Закодировать сообщение"
+                    HorizontalAlignment="Left"
+                    Click="{x:Bind ViewModel.EncodeMessage}"/>
+
+            <Button Grid.Row="2"
+                    Content="Декодировать сообщение"
+                    HorizontalAlignment="Right"
+                    Click="{x:Bind ViewModel.DecodeMessage}"/>
+            
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="Закодированное сообщение"/>
+
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       IsTextSelectionEnabled="True"
+                       Text="{x:Bind ViewModel.EncodedMessage, Mode=OneWay}"/>
+
+            <TextBlock Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Text="Декодированное сообщение"/>
+
+            <TextBlock Grid.Row="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       IsTextSelectionEnabled="True"
+                       Text="{x:Bind ViewModel.DecodedMessage, Mode=OneWay}"/>
+        </Grid>
+
+    </Grid>
+</Page>

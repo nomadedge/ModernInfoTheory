@@ -1,5 +1,5 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
-using ModernInfoTheory.Hamming.Base;
+using ModernInfoTheory.Hamming.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

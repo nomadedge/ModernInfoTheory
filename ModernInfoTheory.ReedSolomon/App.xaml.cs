@@ -1,4 +1,4 @@
-﻿using ModernInfoTheory.VarshamovTenengolts.Views;
+﻿using ModernInfoTheory.ReedSolomon.Views;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -6,7 +6,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace ModernInfoTheory.VarshamovTenengolts
+namespace ModernInfoTheory.ReedSolomon
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
